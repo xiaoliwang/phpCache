@@ -1,0 +1,21 @@
+{
+    "name": "tomcao/php-cache",
+    "description": "a simple php cache",
+    "authors": [
+        {
+            "name": "Tom",
+            "email": "jiepengthegreat@126.com"
+        }
+    ],
+	"version": "0.0.3",
+	"repositories": [
+		{
+			"type": "vcs",
+			"url": "https://github.com/xiaoliwang/phpCache"
+		}
+	],
+    "require": {},
+	"autoload": {
+		"psr-4": {"xiaoliwang\\extensions\\phpCache\\": "src/"}
+	}
+}

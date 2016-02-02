@@ -6,16 +6,18 @@ namespace xiaoliwang\extensions\phpCache\drivers;
 use xiaoliwang\extensions\phpCache\driverAbs;
 use xiaoliwang\extensions\phpCache\driverImp;
 
-class filesDriver extends driverAbs implements driverImp{
+class filesDriver extends driverAbs implements driverImp
+{
 	
 	const NAME = 'FILES';
 	
-	public function checkDriver() : bool{
+	public function checkDriver(): bool{
 		return is_writable($this->getPath()) ? 
 			true : false;
 	}
 	
-	public function __construct(){
+	public function __construct(array $config = []){
+		parent::__construct($config);
 		if (!$this->checkdriver()) {
 			throw new \Exception('CAN\'T USE THIS DRIVER ' . self::NAME . ' FOR YOUR WEBSITE!');
 		}
@@ -29,8 +31,6 @@ class filesDriver extends driverAbs implements driverImp{
 		$expiring_time = $time ? $now + $time : 0;
 		$object = [
 			'value' => $value,
-			'time' => $now,
-			'expired' => $time,
 			'expiring_time' => $expiring_time
 		];
 		$data = $this->encode($object);

@@ -2,3 +2,5 @@
 .buildpath
 test.php
 test/*
+
+/vendor/

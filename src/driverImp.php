@@ -5,7 +5,7 @@ namespace xiaoliwang\extensions\phpCache;
 
 interface driverImp{
 	
-	function __construct();
+	function __construct(array $config = []);
 	
 	function checkDriver(): bool;
 	
